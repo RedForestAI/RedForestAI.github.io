@@ -1,0 +1,121 @@
+import { NavBar } from "@/components/ui/nav-bar";
+import { Separator } from "@/components/ui/separator";
+import { StudentCard, type StudentCardProps } from "@/components/ui/student-card";
+
+const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
+
+// ---- Data you can customize -------------------------------------------------
+const CURRENT_STUDENTS: StudentCardProps[] = [
+  {
+    name: "Ava Reyes",
+    role: "Undergraduate • CS",
+    project: "WebEyeTrack: Head‑pose‑aware gaze estimation in the browser",
+    bio: "Exploring few‑shot calibration and robust tracking under head motion.",
+    photoSrc: "people/ava.jpg",
+    links: [{ label: "GitHub", href: "https://github.com/" }],
+  },
+  {
+    name: "Kai Chen",
+    role: "Undergraduate • CE",
+    project: "LLM‑assisted teacher tooling for content generation",
+    bio: "Building curriculum‑aligned item generation with difficulty control.",
+    photoSrc: "people/kai.jpg",
+    links: [{ label: "LinkedIn", href: "https://linkedin.com/" }],
+  },
+  {
+    name: "Sam Patel",
+    role: "Undergraduate • Psychology",
+    project: "Human‑AI interaction studies in classroom settings",
+    bio: "Designing experiments and UX measures for embodied agents in class.",
+    photoSrc: "people/sam.jpg",
+  },
+];
+
+// Alumni entries with time range and destination
+type Alumni = {
+  name: string;
+  years: string; // e.g., "2023–2025"
+  destination: string; // e.g., "M.S. CS, CMU" or "Software Engineer, Company"
+};
+
+const ALUMNI: Alumni[] = [
+  { name: "Riley Kim", years: "2022–2024", destination: "M.S. HCI, Georgia Tech" },
+  { name: "Jordan Lee", years: "2023–2025", destination: "Software Engineer, Optum" },
+];
+
+// Gallery images for the left side panel
+const LAB_PHOTOS = [
+  "lab/group-1.jpg",
+  "lab/group-2.jpg",
+  "lab/group-3.jpg",
+  "lab/group-4.jpg",
+];
+// ----------------------------------------------------------------------------
+
+export function StudentsPage() {
+  return (
+    <>
+      <NavBar />
+      <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          {/* Left sidebar: photo gallery */}
+          <aside className="lg:col-span-4 self-start lg:sticky lg:top-24">
+            <section className="rounded-lg border p-4">
+              <h2 className="text-lg font-semibold tracking-tight">Lab Photos</h2>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                {LAB_PHOTOS.map((p) => (
+                  <img
+                    key={p}
+                    src={p}
+                    alt="RedForest Lab photo"
+                    className="rounded-md border object-cover h-24 w-full"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ))}
+              </div>
+            </section>
+          </aside>
+
+          {/* Main column */}
+          <div className="lg:col-span-8">
+            <header className="mb-6">
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Students</h1>
+              <p className="mt-2 text-muted-foreground max-w-[70ch]">
+                The RedForest Lab is a collaborative group spanning CS, CE, Psychology, and Education. Meet our current students and alumni.
+              </p>
+            </header>
+
+            <section aria-labelledby="current-students">
+              <h2 id="current-students" className="text-xl font-semibold tracking-tight">Current Students</h2>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {CURRENT_STUDENTS.map((s) => (
+                  <StudentCard key={s.name} {...s} />
+                ))}
+              </div>
+            </section>
+
+            <Separator className="my-8" />
+
+            <section aria-labelledby="alumni">
+              <h2 id="alumni" className="text-xl font-semibold tracking-tight">Alumni</h2>
+              <ul className="mt-4 space-y-3">
+                {ALUMNI.map((a) => (
+                  <li key={a.name} className="rounded-lg border p-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <p className="font-medium leading-tight">{a.name}</p>
+                        <p className="text-sm text-muted-foreground">{a.years}</p>
+                      </div>
+                      <div className="text-sm">{a.destination}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
