@@ -2,7 +2,7 @@ import { NavBar } from "@/components/ui/nav-bar";
 import { Separator } from "@/components/ui/separator";
 import { StudentCard, type StudentCardProps } from "@/components/ui/student-card";
 
-const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
+// const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
 
 // ---- Data you can customize -------------------------------------------------
 const CURRENT_STUDENTS: StudentCardProps[] = [

@@ -6,7 +6,7 @@ import { Footer } from "@/components/ui/footer";
 import { BackToTheTop } from "@/components/ui/back-to-the-top";
 
 // Helper to build URLs that respect Vite's base (good for GitHub Pages)
-const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
+// const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
 
 function Section({ id, title, subtitle, children, bleed = false }: React.PropsWithChildren<{ id: string; title: string; subtitle?: string; bleed?: boolean }>) {
   return (

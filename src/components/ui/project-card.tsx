@@ -15,14 +15,14 @@ export type ProjectCardProps = {
   aspect?: `${number}/${number}` | string;
 };
 
-function resolveAsset(p?: string) {
-  if (!p) return undefined as string | undefined;
-  if (/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(p) || p.startsWith("data:") || p.startsWith("blob:")) return p;
-  const base = import.meta.env.BASE_URL || "/";
-  if (p.startsWith(base)) return p;
-  if (p.startsWith("/")) return new URL(p.slice(1), base).toString();
-  return new URL(p, base).toString();
-}
+// function resolveAsset(p?: string) {
+//   if (!p) return undefined as string | undefined;
+//   if (/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(p) || p.startsWith("data:") || p.startsWith("blob:")) return p;
+//   const base = import.meta.env.BASE_URL || "/";
+//   if (p.startsWith(base)) return p;
+//   if (p.startsWith("/")) return new URL(p.slice(1), base).toString();
+//   return new URL(p, base).toString();
+// }
 
 function ratioToPadding(aspect?: string) {
   if (!aspect) return "56.25%"; // 16/9 default

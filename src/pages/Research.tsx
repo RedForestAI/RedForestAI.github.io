@@ -1,8 +1,7 @@
 import { NavBar } from "../components/ui/nav-bar";
-import { Separator } from "../components/ui/separator";
 import { ProjectCard } from "../components/ui/project-card";
 
-const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
+// const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
 
 // ---- Customize these -------------------------------------------------------
 const PROJECTS = [
