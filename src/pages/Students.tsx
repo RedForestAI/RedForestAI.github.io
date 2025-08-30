@@ -10,8 +10,8 @@ const CURRENT_STUDENTS: StudentCardProps[] = [
     name: "Anthony Chang",
     role: "Undergraduate • EE",
     project: "LLMs for Question Generation in Reading Comprehension Assessment",
-    photoSrc: "people/anthony_chang.jpg",
-    links: [{ label: "GitHub", href: "https://github.com/" }],
+    // photoSrc: "people/anthony_chang.jpg",
+    // links: [{ label: "GitHub", href: "https://github.com/" }],
   },
 ];
 
@@ -23,8 +23,10 @@ type Alumni = {
 };
 
 const ALUMNI: Alumni[] = [
-  { name: "Riley Kim", years: "2022–2024", destination: "M.S. HCI, Georgia Tech" },
-  { name: "Jordan Lee", years: "2023–2025", destination: "Software Engineer, Optum" },
+  { name: "Yashvitha Thatigotla", years: "2023–2025", destination: "Software Dev @ Optum" },
+  { name: "Trieu Truong", years: "2025", destination: "Product Engineer Intern @ Tend" },
+  { name: "Nafees-ul Haque", years: "2025", destination: "Product Management Fellow @ Product Space" },
+  { name: "Tristan Van", years: "2025", destination: "Software Engineer Intern @ Capital One" },
 ];
 
 // Gallery images for the left side panel

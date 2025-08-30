@@ -7,8 +7,8 @@ import { Separator } from "@/components/ui/separator";
 import { Footer } from "@/components/ui/footer";
 import { BackToTheTop } from "@/components/ui/back-to-the-top";
 import { RealtimeViz } from "@/components/ui/realtime-viz";
+import { AIWorkflowViz } from "@/components/ui/ai-workflow-vis";
 import { PandaAnimated } from "@/components/threed/animated-panda";
-// import { LivelyPanda } from "@/components/threed/lively-panda";
 
 // Helper to build URLs that respect Vite's base (good for GitHub Pages)
 // const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
@@ -113,15 +113,15 @@ export function HomePage() {
               <ambientLight intensity={1} />
             </Canvas>
           </div>
-          <div className="prose prose-zinc dark:prose-invert max-w-[95vw]">
+          <div className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-[95vw]">
             <p>
               Embodied agents can <em>explain</em>, <em>demonstrate</em>, and <em>encourage</em> in ways flat interfaces cannot. We pair 3D characters with
               learning‑aligned behaviors and responsible use guidelines so teachers can delegate routine tasks while retaining control.
             </p>
-            <ul>
-              <li>In‑class helpers for pacing, prompts, and formative checks</li>
-              <li>Personalized “coaches” for practice and feedback</li>
-              <li>Accessible designs that complement diverse classrooms</li>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>• In‑class helpers for pacing, prompts, and formative checks</li>
+              <li>• Personalized “coaches” for practice and feedback</li>
+              <li>• Accessible designs that complement diverse classrooms</li>
             </ul>
           </div>
         </div>
@@ -134,18 +134,18 @@ export function HomePage() {
         subtitle="From content generation to difficulty adjustment, we build tools that save time and improve outcomes."
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
+          <div className="prose prose-zinc dark:prose-invert text-muted-foreground max-w-[95vw]">
             <p>
               We integrate LLMs with pedagogy to help teachers craft materials, differentiate instruction, and monitor progress.
               Our goal is to fit into existing workflows — not replace them — with transparency and human oversight.
             </p>
-            <ul>
-              <li>Curriculum‑aligned item banks and activity generators</li>
-              <li>Adaptive difficulty &amp; hinting calibrated to learner needs</li>
-              <li>Actionable dashboards grounded in learning objectives</li>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>• Curriculum‑aligned item banks and activity generators</li>
+              <li>• Adaptive difficulty &amp; hinting calibrated to learner needs</li>
+              <li>• Actionable dashboards grounded in learning objectives</li>
             </ul>
           </div>
-          <MediaPlaceholder kind="image" label="Screenshot / UI mock placeholder" height={320} />
+          <AIWorkflowViz />
         </div>
       </Section>
 
