@@ -1,9 +1,14 @@
 import React from "react";
+import { Canvas } from "@react-three/fiber"
+
 import { NavBar } from "@/components/ui/nav-bar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "@/components/ui/footer";
 import { BackToTheTop } from "@/components/ui/back-to-the-top";
+import { RealtimeViz } from "@/components/ui/realtime-viz";
+import { PandaAnimated } from "@/components/threed/animated-panda";
+// import { LivelyPanda } from "@/components/threed/lively-panda";
 
 // Helper to build URLs that respect Vite's base (good for GitHub Pages)
 // const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
@@ -52,9 +57,6 @@ export function HomePage() {
             Transforming the way we learn with innovative HCI tools for education — building human‑centered experiences that help teachers and students, using AI, gamification, and online collaboration.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild variant="secondary" size="lg">
-              <a href="#what-we-do">What we do</a>
-            </Button>
             <Button asChild size="lg">
               <a href={mailto}>Collaborate with us</a>
             </Button>
@@ -66,22 +68,32 @@ export function HomePage() {
       <Section
         id="what-we-do"
         title="What we do"
-        subtitle="We design, build, and evaluate human‑centered systems that improve teaching and learning."
+        subtitle="We design, build, and evaluate human-centered systems that improve teaching and learning."
       >
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
-            <p>
-              We focus on learning technologies that are <strong>usable</strong>, <strong>effective</strong>, and <strong>equitable</strong>. Our work spans
-              gaze‑aware interfaces, human‑AI collaboration, and classroom‑scale web applications. We emphasize
-              <em>privacy‑preserving</em>, <em>web‑based</em> deployments to meet students and teachers where they are.
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          {/* Copy / CTAs */}
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+              Transforming how we learn with real-time, human-centered tools
+            </h3>
+
+            <p className="mt-3 text-base text-muted-foreground">
+              We create <strong>usable</strong>, <strong>effective</strong>, and <strong>equitable</strong> learning technologies:
+              enhance teacher-to-student & student-to-student communication, human-AI collaboration, and classroom-scale web apps.
+              web-based deployments meet students and teachers <em>where they are</em>.
             </p>
-            <ul>
-              <li>Innovative HCI for education (UX for teachers/students)</li>
-              <li>AI‑driven feedback, content generation, and adaptive difficulty</li>
-              <li>Gamification and online collaboration mechanics</li>
+
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>• Innovative HCI for education (UX for teachers/students)</li>
+              <li>• AI-driven feedback, content generation, and adaptive difficulty</li>
+              <li>• Gamification and online collaboration mechanics</li>
             </ul>
           </div>
-          <MediaPlaceholder kind="video" label="Hero video / animation placeholder" height={320} />
+
+          {/* Animated realtime viz */}
+          <div>
+            <RealtimeViz />
+          </div>
         </div>
       </Section>
 
@@ -92,8 +104,16 @@ export function HomePage() {
         subtitle="We prototype embodied agents — e.g., a Three.js red panda — to mediate instruction, coaching, and engagement for teachers and learners."
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <MediaPlaceholder kind="threejs" label="Three.js Red Panda placeholder" height={360} id="threejs-panda" />
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
+          {/* <MediaPlaceholder kind="threejs" label="Three.js Red Panda placeholder" height={360} id="threejs-panda" /> */}
+          <div className="h-80">
+            <Canvas shadows camera={{ position: [0, 2, 5], fov: 30}} dpr={[1, 2]} gl={{ preserveDrawingBuffer: true}}>
+              <group scale={0.5} position={[0,-0.2,0]} rotation={[0,-Math.PI * 0.2,0]}>
+                <PandaAnimated/>
+              </group>
+              <ambientLight intensity={1} />
+            </Canvas>
+          </div>
+          <div className="prose prose-zinc dark:prose-invert max-w-[95vw]">
             <p>
               Embodied agents can <em>explain</em>, <em>demonstrate</em>, and <em>encourage</em> in ways flat interfaces cannot. We pair 3D characters with
               learning‑aligned behaviors and responsible use guidelines so teachers can delegate routine tasks while retaining control.
@@ -130,7 +150,7 @@ export function HomePage() {
       </Section>
 
       {/* Impact & collaboration */}
-      <Section
+      {/* <Section
         id="impact"
         title="Scalable web solutions with real‑world impact"
         subtitle="We prototype rapidly, then trial in authentic settings — partnering with teachers and districts to ensure real classroom value."
@@ -148,7 +168,7 @@ export function HomePage() {
             </ul>
           </div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* Optional: add more sections here as your assets are ready */}
 

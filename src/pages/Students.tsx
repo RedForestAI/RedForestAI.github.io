@@ -2,32 +2,16 @@ import { NavBar } from "@/components/ui/nav-bar";
 import { Separator } from "@/components/ui/separator";
 import { StudentCard, type StudentCardProps } from "@/components/ui/student-card";
 
-// const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
+const asset = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
 
 // ---- Data you can customize -------------------------------------------------
 const CURRENT_STUDENTS: StudentCardProps[] = [
   {
-    name: "Ava Reyes",
-    role: "Undergraduate • CS",
-    project: "WebEyeTrack: Head‑pose‑aware gaze estimation in the browser",
-    bio: "Exploring few‑shot calibration and robust tracking under head motion.",
-    photoSrc: "people/ava.jpg",
+    name: "Anthony Chang",
+    role: "Undergraduate • EE",
+    project: "LLMs for Question Generation in Reading Comprehension Assessment",
+    photoSrc: "people/anthony_chang.jpg",
     links: [{ label: "GitHub", href: "https://github.com/" }],
-  },
-  {
-    name: "Kai Chen",
-    role: "Undergraduate • CE",
-    project: "LLM‑assisted teacher tooling for content generation",
-    bio: "Building curriculum‑aligned item generation with difficulty control.",
-    photoSrc: "people/kai.jpg",
-    links: [{ label: "LinkedIn", href: "https://linkedin.com/" }],
-  },
-  {
-    name: "Sam Patel",
-    role: "Undergraduate • Psychology",
-    project: "Human‑AI interaction studies in classroom settings",
-    bio: "Designing experiments and UX measures for embodied agents in class.",
-    photoSrc: "people/sam.jpg",
   },
 ];
 
@@ -44,12 +28,12 @@ const ALUMNI: Alumni[] = [
 ];
 
 // Gallery images for the left side panel
-const LAB_PHOTOS = [
-  "lab/group-1.jpg",
-  "lab/group-2.jpg",
-  "lab/group-3.jpg",
-  "lab/group-4.jpg",
-];
+// const LAB_PHOTOS = [
+//   "lab/group-1.jpg",
+//   "lab/group-2.jpg",
+//   "lab/group-3.jpg",
+//   "lab/group-4.jpg",
+// ];
 // ----------------------------------------------------------------------------
 
 export function StudentsPage() {
@@ -59,7 +43,7 @@ export function StudentsPage() {
       <div className="container mx-auto max-w-6xl px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           {/* Left sidebar: photo gallery */}
-          <aside className="lg:col-span-4 self-start lg:sticky lg:top-24">
+          {/* <aside className="lg:col-span-4 self-start lg:sticky lg:top-24">
             <section className="rounded-lg border p-4">
               <h2 className="text-lg font-semibold tracking-tight">Lab Photos</h2>
               <div className="mt-3 grid grid-cols-2 gap-2">
@@ -75,7 +59,7 @@ export function StudentsPage() {
                 ))}
               </div>
             </section>
-          </aside>
+          </aside> */}
 
           {/* Main column */}
           <div className="lg:col-span-8">
