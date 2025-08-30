@@ -6,34 +6,41 @@ import { ProjectCard } from "../components/ui/project-card";
 // ---- Customize these -------------------------------------------------------
 const PROJECTS = [
   {
-    title: "WebEyeTrack: Head‑Pose‑Aware Gaze in the Browser",
-    imageSrc: "projects/webeyetrack-hero.jpg", // docs/public/projects/
+    title: "Embodied Assistants",
+    imageSrc: "projects/embodied_assistants.gif", // docs/public/projects/
     description:
-      "Deep‑learning gaze estimation running fully in the browser with explicit head‑pose modeling and few‑shot personalization.",
-    tags: ["Gaze Estimation", "On‑device ML", "WebAI"],
+      "Interactive 3D agents that explain, demonstrate, and encourage students/teachers in ways flat interfaces cannot. Built with Three.js and React Three Fiber.",
+    tags: ["3D Interaction", "LLMs", "Learning Sciences"],
     href: "https://redforestai.github.io/WebEyeTrack/",
   },
-  // {
-  //   title: "Human‑AI Tutoring with LLMs",
-  //   imageSrc: "projects/llm-tutoring.jpg",
-  //   description:
-  //     "Conversational tutoring agents that adapt to learners, grounded in learning sciences and evaluated for equity, transparency, and outcomes.",
-  //   tags: ["LLMs", "Learning Sciences"],
-  // },
-  // {
-  //   title: "Privacy‑Preserving Sensing for Learning Analytics",
-  //   imageSrc: "projects/priv-sensing.jpg",
-  //   description:
-  //     "Browser‑native signals (gaze, keystrokes, interactions) for real‑time analytics without exporting raw data off‑device.",
-  //   tags: ["HCI", "Analytics", "Privacy"],
-  // },
-  // {
-  //   title: "Robust Calibration for Webcam Eye Tracking",
-  //   imageSrc: "projects/calibration.jpg",
-  //   description:
-  //     "Few‑shot calibration strategies, active target selection, and robustness to head motion for commodity webcams.",
-  //   tags: ["Gaze", "Calibration"],
-  // },
+  {
+    title: "In-Classroom Gamification",
+    imageSrc: "projects/classroom_gamification.png",
+    description:
+      "Game-like mechanics (points, badges, leaderboards) and multiplayer modes to boost engagement and social learning in web-based activities.",
+    tags: ["Gamification", "Reward Systems", "Collaboration"],
+  },
+  {
+    title: "Complexity-Adaptive Learning",
+    imageSrc: "projects/complexity_level_adjustment.png",
+    description:
+      "LLM-powered generation and adaptive difficulty adjustment to personalize learning activities in real time.",
+    tags: ["LLMs", "Adaptive Learning"],
+  },
+  {
+    title: "Automated and AI-Assisted Grading",
+    imageSrc: "projects/automated_and_ai_grading.png",
+    description:
+      "AI-assisted grading and feedback for open-ended student responses (e.g., essays, code).",
+    tags: ["LLMs", "NLP", "Education"],
+  },
+  {
+    title: "Modular Lesson Planner",
+    imageSrc: "projects/modular_lesson_planning.png",
+    description:
+      "Tech-assisted lesson planning and activity generation to help teachers create engaging, standards-aligned materials.",
+    tags: ["Teacher Tools", "Curriculum Design", "LLMs"],
+  },
 ] as const;
 
 const RECRUITING = {
@@ -68,7 +75,7 @@ export function ResearchPage() {
                   imageSrc={p.imageSrc}
                   imageAlt={p.title}
                   description={p.description}
-                  // tags={p.tags as string[]}
+                  tags={p.tags as string[]}
                   href={p.href}
                   aspect="16/9"
                 />
