@@ -1,4 +1,4 @@
-import React, { type JSX } from "react";
+import React from "react";
 import clsx from "clsx";
 
 export interface InlineCodeProps
@@ -12,9 +12,8 @@ export interface InlineCodeProps
  * Safe to place inside <p>, lists, headings, and within prose blocks.
  */
 export function InlineCode({ as = "code", className, ...props }: InlineCodeProps) {
-  const Tag = as as keyof JSX.IntrinsicElements;
+  const Tag: React.ElementType = as || "code";
   return (
-    // @ts-ignore
     <Tag
       {...props}
       className={clsx(

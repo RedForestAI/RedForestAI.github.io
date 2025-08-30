@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import { useThree } from "@react-three/fiber";
 import { useFBX, useAnimations, useTexture } from "@react-three/drei";
 import * as THREE from "three";
@@ -21,7 +21,7 @@ export function PandaAnimated(props: PandaAnimatedProps) {
     map: "/models/Tex_RedPanda.jpg",
   });
 
-  fbx.children.forEach((mesh, i) => {
+  fbx.children.forEach((mesh: any, _: any) => {
     // @ts-ignore
     mesh.material = new THREE.MeshStandardMaterial({ map: textures.map });
   });

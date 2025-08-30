@@ -7,7 +7,7 @@ import React from "react";
  */
 export function RealtimeViz() {
   // Tiny counters to suggest live activity
-  const [ticks, setTicks] = React.useState({ out: 0, in: 0 });
+  const [_, setTicks] = React.useState({ out: 0, in: 0 });
   React.useEffect(() => {
     const id = setInterval(() => {
       setTicks((t) => ({ out: t.out + Math.ceil(Math.random() * 3), in: t.in + Math.ceil(Math.random() * 2) }));

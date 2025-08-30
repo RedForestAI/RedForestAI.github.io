@@ -26,21 +26,21 @@ function Section({ id, title, subtitle, children, bleed = false }: React.PropsWi
   );
 }
 
-function MediaPlaceholder({ kind = "image", label, height = 320, id }: { kind?: "image" | "video" | "animation" | "threejs"; label?: string; height?: number; id?: string }) {
-  const text = label ?? (kind === "threejs" ? "Three.js Canvas" : kind[0].toUpperCase() + kind.slice(1));
-  return (
-    <div
-      id={id}
-      className="relative grid place-items-center rounded-xl border bg-muted/40 text-muted-foreground"
-      style={{ height }}
-    >
-      <div className="pointer-events-none text-sm">
-        {/* Replace this whole block with your media (img/video/canvas/animation) */}
-        {text}
-      </div>
-    </div>
-  );
-}
+// function MediaPlaceholder({ kind = "image", label, height = 320, id }: { kind?: "image" | "video" | "animation" | "threejs"; label?: string; height?: number; id?: string }) {
+//   const text = label ?? (kind === "threejs" ? "Three.js Canvas" : kind[0].toUpperCase() + kind.slice(1));
+//   return (
+//     <div
+//       id={id}
+//       className="relative grid place-items-center rounded-xl border bg-muted/40 text-muted-foreground"
+//       style={{ height }}
+//     >
+//       <div className="pointer-events-none text-sm">
+//         {/* Replace this whole block with your media (img/video/canvas/animation) */}
+//         {text}
+//       </div>
+//     </div>
+//   );
+// }
 
 export function HomePage() {
   const mailto = `mailto:davalosedu515@trinity.edu?subject=Collaboration%20with%20RedForest%20Labs&body=Hi%20Prof.%20Davalos%2C%0D%0A%0D%0AI%27m%20reaching%20out%20about%20collaborating%20with%20RedForest%20Labs.%0D%0A%0D%0A[Please%20describe%20your%20project%20or%20interest...]%0D%0A`;

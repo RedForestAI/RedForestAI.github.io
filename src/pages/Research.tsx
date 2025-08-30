@@ -75,7 +75,9 @@ export function ResearchPage() {
                   imageSrc={p.imageSrc}
                   imageAlt={p.title}
                   description={p.description}
+                  // @ts-ignore
                   tags={p.tags as string[]}
+                  // @ts-ignore
                   href={p.href}
                   aspect="16/9"
                 />
